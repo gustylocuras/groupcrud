@@ -1,0 +1,23 @@
+{
+  "name": "groupcrud",
+  "version": "1.0.0",
+  "description": "this is Shane doing work.",
+  "main": "bike_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustylocuras/groupcrud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustylocuras/groupcrud/issues"
+  },
+  "homepage": "https://github.com/gustylocuras/groupcrud#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.19"
+  }
+}
