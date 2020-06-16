@@ -20,11 +20,9 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 app.use(express.static('public'))
 app.use(express.json())
 
+const bikeController = require('./controller/bike_controller.js')
+app.use('/bikes', bikeController)
 
 app.listen(PORT, (req, res) => {
   console.log('listening...');
-})
-
-app.get('/', (req, res) => {
-  res.send('hello world')
 })
