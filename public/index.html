@@ -7,7 +7,22 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
-{{2+2}}
+
+  <body ng-controller="BikeController as ctrl">
+    <h2>Enjoy The Ride</h2>
+    <h3>Add a bike</h3>
+    <form ng-submit="ctrl.createBike()">
+      <input type="text" ng-model="ctrl.title" placeholder="title"><br>
+      <input type="text" ng-model="ctrl.image" placeholder="image url"><br>
+      <input type="text" ng-model="ctrl.url" placeholder="link"><br>
+      <input type="submit" value="Add Bike">
+    </form>
+    <div ng-repeat="bike in ctrl.bikes">
+      <h3>{{bike.title}}</h3>
+      <img ng-src="{{bike.image}}" alt="bike image">
+      <a href="{{bike.url}}">Check it out</a>
+      <button ng-click="ctrl.deleteBike(bike)">delete bike</button>
+      <button ng-click="ctrl."></button>
+    </div>
   </body>
 </html>
