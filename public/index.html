@@ -33,11 +33,11 @@
         <input type="text" placeholder="title" ng-model="ctrl.updatedTitle">
         <input class="btn btn-small grey" type="submit"  value="save changes">
       </form>
-      <img class="container" ng-src="{{bike.image}}" alt="bike image" />
+      <a href="{{bike.url}}"><img class="container" ng-src="{{bike.image}}" alt="bike image" /></a>
       <div class="container">
 
 
-      <a href="{{bike.url}}">Check it out</a>
+      
       <button class="btn btn-small" ng-click="ctrl.deleteBike(bike)">delete bike</button>
       <button class="btn btn-small" ng-click="ctrl.indexOfEditFormToShow = $index">Edit Bike</button>
       </div>
