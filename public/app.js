@@ -6,7 +6,7 @@ app.controller("BikeController", [
     this.title = "";
     this.image = "";
     this.url = "";
-    this.editTitle = false
+    this.editTitle = false;
     this.indexOfEditFormToShow = null;
     this.bikes = [];
 
@@ -31,7 +31,7 @@ app.controller("BikeController", [
         method: "PUT",
         url: "/bikes/" + bike._id,
         data: {
-          title: this.updatedTitle
+          title: this.updatedTitle,
         },
       }).then(
         (response) => {
@@ -78,7 +78,24 @@ app.controller("BikeController", [
         }
       );
     };
+
+    //get seed bikes
+    this.getseedBikes = () => {
+      $http({
+        method: "GET",
+        url: "/seed",
+      }).then(
+        (response) => {
+          console.log(response);
+          this.bikes = response.data;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    };
     // call bikes on page load
+    this.getseedBikes();
     this.getBikes();
   },
 ]); // close of controller
