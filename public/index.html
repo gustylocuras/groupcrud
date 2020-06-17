@@ -19,10 +19,14 @@
     </form>
     <div ng-repeat="bike in ctrl.bikes">
       <h3>{{bike.title}}</h3>
+      <form ng-if="$index !== ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBike(bike)">
+        <input type="text" ng-model="ctrl.updatedTitle">
+        <input type="submit"  value="save changes">
+      </form>
       <img ng-src="{{bike.image}}" alt="bike image" />
       <a href="{{bike.url}}">Check it out</a>
       <button ng-click="ctrl.deleteBike(bike)">delete bike</button>
-      <button ng-click="ctrl."></button>
+      <button ng-click="ctrl.indexOfEditFormToShow = $index">Edit Bike</button>
     </div>
   </body>
 </html>

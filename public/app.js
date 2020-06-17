@@ -6,7 +6,8 @@ app.controller("BikeController", [
     this.title = "";
     this.image = "";
     this.url = "";
-
+    this.editTitle = false
+    this.indexOfEditFormToShow = null;
     this.bikes = [];
 
     // delete bike
