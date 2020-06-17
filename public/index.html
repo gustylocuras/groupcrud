@@ -24,15 +24,17 @@
         <input class="btn btn-small" type="submit" value="Add Bike" />
       </form>
     </div>
+    <br>
+    <br>
 
-    <div class"container center" ng-repeat="bike in ctrl.bikes">
-      <h5 class="center">{{bike.title}}</h5>
+    <div class="container center" ng-repeat="bike in ctrl.bikes">
+      <h5>{{bike.title}}</h5>
       <form ng-if="$index == ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBike(bike)">
         <input type="text" placeholder="title" ng-model="ctrl.updatedTitle">
         <input class="btn btn-small grey" type="submit"  value="save changes">
       </form>
-      <img class="container center" ng-src="{{bike.image}}" alt="bike image" />
-      <div class="container center">
+      <img class="container" ng-src="{{bike.image}}" alt="bike image" />
+      <div class="container">
 
 
       <a href="{{bike.url}}">Check it out</a>
@@ -44,6 +46,6 @@
     <br>
     <br>
     <br>
-    
+
   </body>
 </html>
