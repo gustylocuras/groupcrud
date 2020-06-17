@@ -80,22 +80,22 @@ app.controller("BikeController", [
     };
 
     //get seed bikes
-    this.getseedBikes = () => {
-      $http({
-        method: "GET",
-        url: "/seed",
-      }).then(
-        (response) => {
-          console.log(response);
-          this.bikes = response.data;
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    };
+    // this.getseedBikes = () => {
+    //   $http({
+    //     method: "GET",
+    //     url: "/seed",
+    //   }).then(
+    //     (response) => {
+    //       console.log(response);
+    //       this.bikes = response.data;
+    //     },
+    //     (err) => {
+    //       console.log(err);
+    //     }
+    //   );
+    // };
     // call bikes on page load
-    this.getseedBikes();
+    // this.getseedBikes();
     this.getBikes();
   },
 ]); // close of controller
