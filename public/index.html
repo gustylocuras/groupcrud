@@ -3,30 +3,47 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <script src="/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Enjoy your Ride</title>
   </head>
 
   <body ng-controller="BikeController as ctrl">
-    <h2>Enjoy The Ride</h2>
-    <h3>Add a bike</h3>
-    <form ng-submit="ctrl.createBike()">
-      <input type="text" ng-model="ctrl.title" placeholder="title" /><br />
-      <input type="text" ng-model="ctrl.image" placeholder="image url" /><br />
-      <input type="text" ng-model="ctrl.url" placeholder="link" /><br />
-      <input type="submit" value="Add Bike" />
-    </form>
-    <div ng-repeat="bike in ctrl.bikes">
-      <h3>{{bike.title}}</h3>
-      <form ng-if="$index == ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBike(bike)">
-        <input type="text" ng-model="ctrl.updatedTitle">
-        <input type="submit"  value="save changes">
+    <div class="container">
+
+
+    <h2 class="center">Enjoy The Ride</h2>
+
+    <div class="add container">
+      <h4>Add a bike</h4>
+      <form ng-submit="ctrl.createBike()">
+        <input type="text" ng-model="ctrl.title" placeholder="title" /><br />
+        <input type="text" ng-model="ctrl.image" placeholder="image url" /><br />
+        <input type="text" ng-model="ctrl.url" placeholder="link" /><br />
+        <input class="btn btn-small" type="submit" value="Add Bike" />
       </form>
-      <img ng-src="{{bike.image}}" alt="bike image" />
-      <a href="{{bike.url}}">Check it out</a>
-      <button ng-click="ctrl.deleteBike(bike)">delete bike</button>
-      <button ng-click="ctrl.indexOfEditFormToShow = $index">Edit Bike</button>
     </div>
+
+    <div class"container center" ng-repeat="bike in ctrl.bikes">
+      <h5 class="center">{{bike.title}}</h5>
+      <form ng-if="$index == ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBike(bike)">
+        <input type="text" placeholder="title" ng-model="ctrl.updatedTitle">
+        <input class="btn btn-small grey" type="submit"  value="save changes">
+      </form>
+      <img class="container center" ng-src="{{bike.image}}" alt="bike image" />
+      <div class="container center">
+
+
+      <a href="{{bike.url}}">Check it out</a>
+      <button class="btn btn-small" ng-click="ctrl.deleteBike(bike)">delete bike</button>
+      <button class="btn btn-small" ng-click="ctrl.indexOfEditFormToShow = $index">Edit Bike</button>
+      </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
   </body>
 </html>
