@@ -31,7 +31,7 @@ app.controller("BikeController", [
         method: "PUT",
         url: "/bikes/" + bike._id,
         data: {
-          title: this.updatedTitle,
+          title: this.updatedTitle
         },
       }).then(
         (response) => {
