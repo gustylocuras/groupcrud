@@ -1,4 +1,4 @@
-const app = angular.module("MyApp", []);
+const app = angular.module("BikeApp", []);
 
 app.controller("BikeController", [
   "$http",
@@ -6,8 +6,10 @@ app.controller("BikeController", [
     this.title = "";
     this.image = "";
     this.url = "";
+
     this.bikes = [];
 
+    // delete bike
     this.deleteBike = (bike) => {
       $http({
         method: "DELETE",
@@ -22,6 +24,25 @@ app.controller("BikeController", [
       );
     };
 
+    //edit bike
+    this.editBike = (bike) => {
+      $http({
+        method: "PUT",
+        url: "/bikes/" + bike._id,
+        data: {
+          title: this.updatedTitle,
+        },
+      }).then(
+        (response) => {
+          this.getBikes();
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    };
+
+    //create bike
     this.createBike = () => {
       $http({
         method: "POST",
@@ -41,6 +62,7 @@ app.controller("BikeController", [
       );
     };
 
+    //get bikes
     this.getBikes = () => {
       $http({
         method: "GET",
@@ -55,6 +77,7 @@ app.controller("BikeController", [
         }
       );
     };
+    // call bikes on page load
     this.getBikes();
   },
 ]); // close of controller

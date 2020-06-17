@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="MyApp">
+<html lang="en" dir="ltr" ng-app="BikeApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <script src="/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="/app.css">
-    <meta charset="utf-8">
+    <link rel="stylesheet" href="/app.css" />
+    <meta charset="utf-8" />
     <title></title>
   </head>
 
@@ -12,14 +12,14 @@
     <h2>Enjoy The Ride</h2>
     <h3>Add a bike</h3>
     <form ng-submit="ctrl.createBike()">
-      <input type="text" ng-model="ctrl.title" placeholder="title"><br>
-      <input type="text" ng-model="ctrl.image" placeholder="image url"><br>
-      <input type="text" ng-model="ctrl.url" placeholder="link"><br>
-      <input type="submit" value="Add Bike">
+      <input type="text" ng-model="ctrl.title" placeholder="title" /><br />
+      <input type="text" ng-model="ctrl.image" placeholder="image url" /><br />
+      <input type="text" ng-model="ctrl.url" placeholder="link" /><br />
+      <input type="submit" value="Add Bike" />
     </form>
     <div ng-repeat="bike in ctrl.bikes">
       <h3>{{bike.title}}</h3>
-      <img ng-src="{{bike.image}}" alt="bike image">
+      <img ng-src="{{bike.image}}" alt="bike image" />
       <a href="{{bike.url}}">Check it out</a>
       <button ng-click="ctrl.deleteBike(bike)">delete bike</button>
       <button ng-click="ctrl."></button>
