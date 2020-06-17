@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="BikeApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Enjoy your Ride</title>
+  </head>
+
+  <body ng-controller="BikeController as ctrl">
+    <div class="container">
+
+
+    <h2 class="center">Enjoy The Ride</h2>
+
+    <div class="add container">
+      <h4>Add a bike</h4>
+      <form ng-submit="ctrl.createBike()">
+        <input type="text" ng-model="ctrl.title" placeholder="title" /><br />
+        <input type="text" ng-model="ctrl.image" placeholder="image url" /><br />
+        <input type="text" ng-model="ctrl.url" placeholder="link" /><br />
+        <input class="btn btn-small" type="submit" value="Add Bike" />
+      </form>
+    </div>
+    <br>
+    <br>
+
+    <div class="container center" ng-repeat="bike in ctrl.bikes">
+      <h5>{{bike.title}}</h5>
+      <form ng-if="$index == ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBike(bike)">
+        <input type="text" placeholder="title" ng-model="ctrl.updatedTitle">
+        <input class="btn btn-small grey" type="submit"  value="save changes">
+      </form>
+      <a href="{{bike.url}}"><img class="container" ng-src="{{bike.image}}" alt="bike image" /></a>
+      <div class="container">
+
+
+      
+      <button class="btn btn-small" ng-click="ctrl.deleteBike(bike)">delete bike</button>
+      <button class="btn btn-small" ng-click="ctrl.indexOfEditFormToShow = $index">Edit Bike</button>
+      </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+  </body>
+</html>
