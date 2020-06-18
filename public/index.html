@@ -29,15 +29,17 @@
 
     <div class="container center" ng-repeat="bike in ctrl.bikes">
       <h5>{{bike.title}}</h5>
+
+      <a href="{{bike.url}}"><img class="container" ng-src="{{bike.image}}" alt="bike image" /></a>
       <form ng-if="$index == ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBike(bike)">
         <input type="text" placeholder="title" ng-model="ctrl.updatedTitle">
         <input class="btn btn-small grey" type="submit"  value="save changes">
       </form>
-      <a href="{{bike.url}}"><img class="container" ng-src="{{bike.image}}" alt="bike image" /></a>
+      <br>
       <div class="container">
 
 
-      
+
       <button class="btn btn-small" ng-click="ctrl.deleteBike(bike)">delete bike</button>
       <button class="btn btn-small" ng-click="ctrl.indexOfEditFormToShow = $index">Edit Bike</button>
       </div>
