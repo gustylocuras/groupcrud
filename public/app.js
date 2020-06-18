@@ -36,6 +36,8 @@ app.controller("BikeController", [
       }).then(
         (response) => {
           this.getBikes();
+          this.updatedTitle = "";
+
         },
         (error) => {
           console.log(error);
@@ -56,6 +58,9 @@ app.controller("BikeController", [
       }).then(
         (response) => {
           this.bikes.unshift(response.data);
+          this.title = "";
+          this.image = "";
+          this.url = "";
         },
         (error) => {
           console.log(error);
